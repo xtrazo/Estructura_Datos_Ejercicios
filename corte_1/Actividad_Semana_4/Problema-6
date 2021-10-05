@@ -1,0 +1,59 @@
+using System;
+
+namespace Problema5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*INTEGRANTES DEL GRUPO:
+                Johan Sebastian Rios
+                Luis Esteban Triana
+                Juan Manuel Vanegas
+                Andres Santiago Villamil 
+            Jornada:
+                Diurna
+            Grupo:
+                63102C / 239 - 2A*/ 
+            // Problema 6: Crea un array de números de un tamaño pasado por teclado, el array contendrá números aleatorios entre
+            // 1 y 300 y mostrar aquellos números que acaben en un dígito que nosotros le indiquemos por teclado 
+            
+            Random Aleatorio = new Random();
+            int  Comparacion ;
+            int  Dimensión  =  1 ;
+            int [] Resultado  =  new  int [ Dimensión ];
+            int  Longitud ;
+
+            Consola . WriteLine ( " Ingrese por favor la longitud del arreglo " );
+            Longitud  =  int . Analizar ( Consola . ReadLine ());
+            int [] Numeros  =  new  int [ Longitud ];
+
+            para ( int  i  =  0 ; i  <  Longitud ; i ++ )
+            {
+                Numeros [ i ] =  Aleatorio . Siguiente ( 1 , 300 );
+                Consola . Escribir ( $ " { Numeros [ i ]}   " );
+
+            }
+
+            Consola . WriteLine ( " \ n Ingrese un digito del 0 al 9 para imprimir los numeros que acaben en este: " );
+            Comparacion  =  int . Analizar ( Consola . ReadLine ());
+
+            Consola . WriteLine ( " Se van a mostrar los números termiandos en: "  +  Comparacion );
+            Consola . WriteLine ( " Los números son: " );
+
+            para ( int  j  =  0 ; j  <  Longitud ; j ++ )
+            {
+                si ( Numeros [ j ] %  10  ==  Comparacion )
+                {
+                    int  indice  =  0 ;
+                    Resultado [ índice ] =  Numeros [ j ];
+                    Consola . Write ( $ " { Resultado [ índice ]} - " );
+                    índice  =  índice  +  1 ;
+                    Dimensión  =  Dimensión  +  1 ;
+                }
+            }
+
+            Dimensión  =  Dimensión  -  1 ;
+        }
+    }
+}
